@@ -232,16 +232,19 @@ def get_input():
     return data_df
 
 df = get_input()
+st.write("""## Input Value""")
 st.write(df)
 data_sample = pd.read_csv('S_thai_female_tcas.csv')
 X_new = df
 X_new = X_new[:1] # Select only the first row (the user input data)
 load_nor = pickle.load(open('normalization.pkl', 'rb'))
 X_new = load_nor.transform(X_new)
+st.write("""## Input Value After Normalization""")
 st.write(X_new)
 # -- Reads the saved classification model
 load_knn = pickle.load(open('best_knn.pkl', 'rb'))
 # Apply model for prediction
 prediction = load_knn.predict(X_new)
+st.write("""## Prediction Results""")
 st.write(prediction)
 
