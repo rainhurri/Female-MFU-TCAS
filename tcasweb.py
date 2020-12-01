@@ -12,12 +12,10 @@ st.sidebar.subheader('Please enter your data:')
 
 def get_input():
     #widgets
-    v_FacultyID = st.sidebar.radio('School of ...', 
-    ['School of Liberal Arts','School of Science','School of Management','School of Information Technology','School of Agro-industry','School of Law','School of Cosmetic Science','School of Nursing','School of Medicine','School of Dentistry','School of Social Innovation','School of Sinology',
-    'School of Integrative Medicine'])
-    v_DepartmentCode = st.sidebar.selectbox('Select your major',[ 'English','Applied Chemistry','Biotechnology','Materials Engineering','Accounting','Economics','Business Administration','Tourism Management','Hospitality Industry Management','Logistics and Supply Chain Management','Aviation Business Management','Information Technology','Computer Science and Innovation','Software Engineering','Multimedia Technology and Animation','Food Science and Technology','Posthavest Technology and Logistics','Computer Engineering','Laws','Cosmetic Science','Public Health','Sports and Health Science','Environmental Health','Occupational Health and Safety','Nursing Science','Medicine','Dentistry','International Development','Chinese Study','Business Chinese','Teaching Chinese Language (5 Year)','Chinese Language and Culture','Applied Thai Traditional Medicine','Physical Therapy','Traditional Chinese Medicine'])
+    v_FacultyID = st.sidebar.radio('School of ...',['School of Agro-industry','School of Cosmetic Science','School of Dentistry','School of Information Technology','School of Integrative Medicine''School of Law','School of Liberal Arts','School of Management','School of Nursing','School of Medicine','School of Science','School of Sinology','School of Social Innovation',])
+    v_DepartmentCode = st.sidebar.selectbox('Select your major',['Accounting','Applied Chemistry','Applied Thai Traditional Medicine','Aviation Business Management','Biotechnology','Business Administration','Business Chinese','Chinese Language and Culture','Chinese Study','Computer Engineering','Computer Science and Innovation','Cosmetic Science','Dentistry','Economics','English','Environmental Health','Food Science and Technology','Hospitality Industry Management','Information Technology','International Development','Laws','Logistics and Supply Chain Management','Materials Engineering','Medicine','Multimedia Technology and Animation','Nursing Science','Occupational Health and Safety','Physical Therapy','Posthavest Technology and Logistics','Public Health','Software Engineering','Sports and Health Science','Teaching Chinese Language (5 Year)','Tourism Management','Traditional Chinese'])
     v_TCAS = st.sidebar.radio('TCAS', ['1', '2', '5'])
-    v_EntryTypeID = st.sidebar.selectbox('Entry Type', ['DIRECT ADMISSION BY SCHOOL', 'SPECIAL FOR GOOD STUDENT', 'QUOTA 17 NORTHERN PROVINCES','QUOTA BY SCHOOL','DIRECT ADMISSION'])
+    v_EntryTypeID = st.sidebar.selectbox('Entry Type', ['Direct admission','Direct admission by school', 'Quota 17 northern provinces','Quota by school','Special for good student',])
     v_HomeRegion = st.sidebar.radio('Home Region be in ...', ['North', 'Not North'])
     v_SchoolRegion = st.sidebar.radio('SchoolRegion be in ...', ['North', 'Not North'])
     v_EntryGPA = st.sidebar.slider('EntryGPA', 1.72, 4.00, 3.25)
@@ -116,10 +114,10 @@ def get_input():
     elif v_TCAS == '2': v_TCAS = 2
     else: v_TCAS = 5
 
-    if v_EntryTypeID == 'QUOTA 17 NORTHERN PROVINCES': v_EntryTypeID = 10
-    elif v_EntryTypeID == 'DIRECT ADMISSION BY SCHOOL': v_EntryTypeID = 29
-    elif v_EntryTypeID == 'DIRECT ADMISSION': v_EntryTypeID = 20
-    elif v_EntryTypeID == 'SPECIAL FOR GOOD STUDENT': v_EntryTypeID = 52
+    if v_EntryTypeID == 'Quota 17 northern provinces': v_EntryTypeID = 10
+    elif v_EntryTypeID == 'Direct admission by school': v_EntryTypeID = 29
+    elif v_EntryTypeID == 'Direct admission': v_EntryTypeID = 20
+    elif v_EntryTypeID == 'Special for good student': v_EntryTypeID = 52
     else: v_EntryTypeID = 11
 
     if v_Q1 == 'Yes': v_Q1 = 1 
