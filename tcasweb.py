@@ -233,7 +233,7 @@ def get_input():
 
 df = get_input()
 st.write(df)
-data_sample = pd.read_excel('S_thai_female_tcas.xlsx')
+data_sample = pd.read_csv('S_thai_female_tcas.csv')
 X_new = df
 X_new = X_new[:1] # Select only the first row (the user input data)
 load_nor = pickle.load(open('normalization.pkl', 'rb'))
